@@ -1,0 +1,11 @@
+[
+  {
+    "SiteID": 1234,
+    "SiteName": "Site Name",
+    "LATITUDE": 15.13454,
+    "LONGITUDE": 120.59050,
+    "2GCount": 1,
+    "3GCount": 1,
+    "4GCount": 1
+  },
+]
