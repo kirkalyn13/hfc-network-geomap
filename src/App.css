@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+body{
+  background-color: #000;
+  color: white;
+}
 .leaflet-container {
   width: 100%;
   height: 100vh;
@@ -13,16 +16,212 @@
   top: 0;
   background-color: #00796B;
   font-weight: bold;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  min-height: 10vh;
 }
 .img{
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 1.25rem;
+  margin: 10px;
 
 }
 .title{
   font-size: 1.5rem;
   line-height: 1;
+  color: #FFFFFF;
+}
+label{
+  margin: 5px;
+  font-weight: bold;;
+}
+input{
+  background-color: hsl(0, 0%, 0%);
+  border: 2px solid #00796B; 
+  color:#FFF;
+  border-radius: 5px;
+}
+input:hover, input:active{
+  border: 2px solid #FFA000;
+}
+.container-head{
+  display: flex;
+  margin: 2px 10px 2px;
+}
+.container-nav{
+  display: flex;
+  margin-right: 50px;
+  justify-content: space-around;
+  align-items: center;
+  font-size: large;
+}
+.container-form{
+  width: 50%;
+  height: 550px;
+  margin: 20px;
+  background-color: #212121;
+  border-radius: 5px;
+}
+.container-sites{
+  width: 50%;
+  height: 550px;
+  margin: 20px;
+  justify-content: center;
+  border-radius: 5px;
+  background: #212121;
+}
+.container-site{
+  padding: 10px;
+  margin: 20px;
+  border: solid 2px #00796B;
+  background: rgba(0, 80, 80, 0.1);
+  border-radius: 5px;
+}
+.container-register-sites{
+  display: flex;
+}
+.container-edit-delete{
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  color: #F44336; 
+  justify-content: space-around;
+}
+.container-radio-label{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.container-search{
+  padding-bottom: 15px;
+  /*width: 100%;
+  display: flex;*/
+}
+a:link, a:visited {
+  background-color: #00796B;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right:2px;
+  border-radius: 5px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+a:hover, a:active {
+  background-color: #FFA000;
+  color: #000000;
+  
+}
+.radio-btn{
+  color: #F44336;
+}
+.btn-register{
+  font-size:large;
+  margin: 20px 100px 10px;
+  color: #FFF;
+  background: #009688; 
+  padding: 10px 20px;
+  border: solid 1px #000;
+  border-radius:5px;
+}
+.btn-register:hover, .btn-register:active{
+  cursor: pointer;
+  color: #000; 
+  border: 2px solid #000;
+  border-radius: 5px;
+  background: #FFA000;
+}
+.btn-edit, .btn-delete{
+  color: #009688;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.btn-edit:hover, .btn-delete:hover, .btn-edit:active, .btn-delete:active{
+  color: #000;
+  padding: 5px 10px;
+}
+.radio-label{
+  font-size: x-small;
+}
+.info-label{
+  font-weight: bold;
+  color:#009688;
+}
+.information{
+  width: 90%;
+  height: 180px;
+  margin: 10px;
+  padding: 10px;
+}
+.info{
+  display: flex;
+  justify-content: space-between;
+}
+.register-form{
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.info{
+  display: flex;
+  justify-content: space-between;
+}
+.site-list{
+  height: 400px;
+  overflow-y: scroll;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #009688;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00796B;
+  border-radius: 10px;
+}
+@media(max-width: 500px){
+  .container-register-sites{
+    display: flex;
+    flex-direction: column;
+  }
+  .container-form{
+    width: 100%;
+    margin: 10px 0px 10px;
+  }
+  .container-sites{
+    width: 100%;
+    margin: 10px 0px 10px;
+  }
+  .header{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .container-head{
+    justify-content: center;
+  }
+  a:link, a:visited {
+    font-size: x-small;
+    padding: 5px 10px;
+    margin: 0px 20px 2px;
+  }
+  .container-nav{
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 2px;;
+  }
 }
