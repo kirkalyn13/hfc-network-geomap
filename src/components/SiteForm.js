@@ -6,9 +6,9 @@ const SiteForm = ({addOrEdit, currentID, sites}) => {
         siteName: '',
         latitude: '',
         longitude: '',
-        count2G: '0',
-        count3G: '0',
-        count4G: '0',
+        count2G: '1',
+        count3G: '1',
+        count4G: '1',
     }
     var [ values, setValues ] = useState(initialFieldValues)
     const [submitState, setSubmitState] = useState(false)
@@ -21,7 +21,7 @@ const SiteForm = ({addOrEdit, currentID, sites}) => {
                ...initialFieldValues
            })
             setMode('Register New Cell Site')
-            setBtn('REGISTER SITE')}
+            setBtn('REGISTER')}
         else{
             setValues({
                 ...sites[currentID]
