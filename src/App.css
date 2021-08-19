@@ -57,14 +57,14 @@ input:hover, input:active{
 }
 .container-form{
   width: 50%;
-  height: 550px;
+  height: 80vh;
   margin: 20px;
   background-color: #212121;
   border-radius: 5px;
 }
 .container-sites{
   width: 50%;
-  height: 550px;
+  height: 80vh;
   margin: 20px;
   justify-content: center;
   border-radius: 5px;
@@ -147,7 +147,7 @@ a:hover, a:active {
   padding: 5px 10px;
 }
 .radio-label{
-  font-size: x-small;
+  font-size: small;
 }
 .info-label{
   font-weight: bold;
@@ -175,7 +175,7 @@ a:hover, a:active {
   justify-content: space-between;
 }
 .site-list{
-  height: 400px;
+  height: 65vh;
   overflow-y: scroll;
 }
 /* width */
