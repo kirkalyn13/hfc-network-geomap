@@ -20,14 +20,16 @@ body{
   min-height: 10vh;
 }
 .img{
-  width: 2.5rem;
-  height: 2.5rem;
+  margin-top: 30px;
+  width: 5rem;
+  height: 5rem;
   margin-right: 1.25rem;
   margin: 10px;
 
 }
 .title{
-  font-size: 1.5rem;
+  margin-top: 30px;
+  font-size: 2rem;
   line-height: 1;
   color: #FFFFFF;
 }
@@ -175,7 +177,7 @@ a:hover, a:active {
   justify-content: space-between;
 }
 .site-list{
-  height: 65vh;
+  height: 75%;
   overflow-y: scroll;
 }
 /* width */

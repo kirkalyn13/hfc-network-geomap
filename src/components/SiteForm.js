@@ -16,7 +16,7 @@ const SiteForm = ({addOrEdit, currentID, sites}) => {
     const [btn, setBtn] = useState('ADD SITE')
 
     useEffect(() => {
-        if(currentID == ''){
+        if(currentID === ''){
            setValues({
                ...initialFieldValues
            })

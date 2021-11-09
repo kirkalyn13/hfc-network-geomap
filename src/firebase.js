@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyBOt7jEtgGkTybdRo8D3X7bTnF-wN0SMGQ",
   authDomain: "site-geomap.firebaseapp.com",
   databaseURL: "https://site-geomap-default-rtdb.asia-southeast1.firebasedatabase.app",
