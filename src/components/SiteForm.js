@@ -68,31 +68,31 @@ const SiteForm = ({addOrEdit, currentID, sites}) => {
                 <div className="container-radio-label">
                     <div className="radio-label">
                         <input type="radio" id="1" name="count2G" value="1" onChange={handleInputChange}/>
-                        <label for="1">With 2G</label>
+                        <label htmlFor="1">With 2G</label>
                     </div>
                     <div className="radio-label">
                         <input type="radio"  id="0" name="count2G" value="0" onChange={handleInputChange}/>
-                        <label for="0">Without 2G</label>
+                        <label htmlFor="0">Without 2G</label>
                     </div>
                 </div>
                 <div className="container-radio-label">
                     <div className="radio-label">
                         <input type="radio" id="1" name="count3G" value="1" onChange={handleInputChange}/>
-                        <label for="1">With 3G</label>
+                        <label htmlFor="1">With 3G</label>
                     </div>
                     <div className="radio-label">
                         <input type="radio"  id="0" name="count3G" value="0" onChange={handleInputChange}/>
-                        <label for="0">Without 3G</label>
+                        <label htmlFor="0">Without 3G</label>
                     </div>
                 </div>
                 <div className="container-radio-label">
                     <div className="radio-label">
                         <input type="radio" id="1" name="count4G" value="1" onChange={handleInputChange}/>
-                        <label for="1">With 4G</label>
+                        <label htmlFor="1">With 4G</label>
                     </div>
                     <div className="radio-label">
                         <input type="radio"  id="0" name="count4G" value="0" onChange={handleInputChange}/>
-                        <label for="0">Without 4G</label>
+                        <label htmlFor="0">Without 4G</label>
                     </div>
                 </div>
                 <input type="submit" value={btn} className="btn-register" />

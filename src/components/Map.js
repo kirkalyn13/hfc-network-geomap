@@ -31,8 +31,9 @@ const Map = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <MobileUser location={defPosition}/>
-            {Object.values(sites).map(site => (
+            {Object.values(sites).map((site, key) => (
                 <CellSite 
+                key={key}
                 id={site.siteID} 
                 location={[
                     site.latitude,

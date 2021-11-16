@@ -92,10 +92,9 @@ const Manager = () => {
             <input type="text" placeholder="Enter Site ID" onChange={event => {setSearchInput(event.target.value)}}/>
             </div>
             <div className="site-list">
-            {Object.keys(filteredSites).map(id=>{
+            {Object.keys(filteredSites).map((id)=>{
                 return (
-                <>
-                <div className="container-site">
+                <div className="container-site" key={id}>
                 <SiteDetails
                 siteID={sites[id].siteID} siteName={sites[id].siteName} 
                 latitude={sites[id].latitude} longitude={sites[id].longitude}
@@ -106,7 +105,7 @@ const Manager = () => {
                 <a className="btn-delete" onClick={() => { onDelete(id)} }>Delete</a>
                 </div>
                 </div>
-                </>)
+                )
             })}
             </div>
         </div>
