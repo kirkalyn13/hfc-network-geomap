@@ -1,45 +1,45 @@
 import { useState, useEffect } from 'react'
-import SiteDetails from './SiteDetails'
-import SiteForm from './SiteForm'
+import Details from './Details'
+import RegisterForm from './RegisterForm'
 import firebaseDb from '../firebase'
 
 const Manager = () => {
-    const [sites, setSites] = useState({})
+    const [devices, setDevices] = useState({})
     const [currentID, setCurrentID ] = useState('')
     const [searchInput, setSearchInput] = useState('');
-    const [filteredSites, setFilteredSites] = useState({})
+    const [filteredDevices, setFilteredDevices] = useState({})
 
     useEffect(()=>{
-        const toFilter = Object.entries(sites)
+        const toFilter = Object.entries(devices)
         const searchedVal = toFilter.filter(val => {
-            if(searchInput == ''){
+            if(searchInput === ''){
                 return val[0]
-            }else if(val[1].siteID.toLowerCase().includes(searchInput.toLowerCase())){
+            }else if(val[1].nodeID.toLowerCase().includes(searchInput.toLowerCase())){
                 return val[0]
             }})
         const filtered = Object.fromEntries(searchedVal)
-        setFilteredSites(filtered)
+        setFilteredDevices(filtered)
     },[searchInput])
 
     useEffect(() => {
-        firebaseDb.child('cellsites').on('value', snapshot =>{
-            if(snapshot.val() != null){
-                setSites({
+        firebaseDb.child('hfc-nodes').on('value', snapshot =>{
+            if(snapshot.val() !== null){
+                setDevices({
                     ...snapshot.val()
                 })
-                setFilteredSites({
+                setFilteredDevices({
                     ...snapshot.val()
                 })
             }
             else{
-                setSites({})
+                setDevices({})
             }
         })
     },[])
 
     const addOrEdit = obj => {
-        if(currentID == ""){
-            firebaseDb.child('cellsites').push(
+        if(currentID === ""){
+            firebaseDb.child('hfc-nodes').push(
                 obj,
                 err => {
                     if(err){
@@ -47,10 +47,10 @@ const Manager = () => {
                     }
                 }
             )
-            alert("Registered New Cell Site to Databsae.")
+            alert("Registered New Device to Databsae.")
         }
         else{
-            firebaseDb.child(`cellsites/${currentID}`).set(
+            firebaseDb.child(`hfc-nodes/${currentID}`).set(
                 obj,
                 err => {
                     if(err){
@@ -61,20 +61,21 @@ const Manager = () => {
                     }
                 }
             )
-            alert("Edited Site Information Saved.")
+            alert("Edited Node Information Saved.")
         }
         
     }
 
     const onDelete = key =>{
-        if(window.confirm("Are you sure you want to delete the selected site?")){
-            firebaseDb.child(`cellsites/${key}`).remove(
+        if(window.confirm("Are you sure you want to delete the selected node?")){
+            firebaseDb.child(`hfc-nodes/${key}`).remove(
                 err => {
                     if(err){
                         console.log(err)
                     }
                     else{
                         setCurrentID('')
+                        alert("Deleted Device.")
                     }
                 }
             )
@@ -84,21 +85,24 @@ const Manager = () => {
 
     return (
         <div className="container-register-sites">
-            <SiteForm {...({addOrEdit, currentID, sites})} />
+            <RegisterForm {...({addOrEdit, currentID, devices})} />
             <div className="container-sites">
-            <h1>Network Site List</h1>
+            <h1>Network Devices List</h1>
             <div className="container-search">
             <label>Search: </label>
-            <input type="text" placeholder="Enter Site ID" onChange={event => {setSearchInput(event.target.value)}}/>
+            <input type="text" placeholder="Enter Device ID" onChange={event => {setSearchInput(event.target.value)}}/>
             </div>
             <div className="site-list">
-            {Object.keys(filteredSites).map((id)=>{
+            {Object.keys(filteredDevices).map((id)=>{
                 return (
                 <div className="container-site" key={id}>
-                <SiteDetails
-                siteID={sites[id].siteID} siteName={sites[id].siteName} 
-                latitude={sites[id].latitude} longitude={sites[id].longitude}
-                count2G={sites[id].count2G} count3G={sites[id].count3G} count4G={sites[id].count4G}
+                <Details
+                id={devices[id].ID} 
+                deviceType={devices[id].type}
+                location={devices[id].location} 
+                latitude={devices[id].latitude} 
+                longitude={devices[id].longitude}
+                status={devices[id].activeStatus}
                 />
                 <div className="container-edit-delete">
                 <a className="btn-edit" onClick={() => setCurrentID(id)}>Edit</a>

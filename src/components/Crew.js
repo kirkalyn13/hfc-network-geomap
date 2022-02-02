@@ -2,14 +2,13 @@ import { Marker, Popup, useMapEvents, Circle } from 'react-leaflet'
 import { Icon } from 'leaflet'
 import { useState } from 'react'
 
-const phone = new Icon({
-    iconUrl: "/phone.png",
+const crew = new Icon({
+    iconUrl: "/crew.png",
     iconSize: [30, 30]
 })
 
-const mobileRangeOptions = { fillColor: 'cyan' }
 
-const MobileUser = () => {
+const Crew = () => {
   const [toggleCoverage, setToggleCoverage] = useState()
     function LocationMarker() {
         const [position, setPosition] = useState(null)
@@ -26,13 +25,12 @@ const MobileUser = () => {
         return position === null ? null : (
           <Marker 
           position={position}
-          icon={phone}
+          icon={crew}
           >
             <Popup>
                 <h3>Mobile User</h3>
                   <Circle
                       center={position}
-                      pathOptions={mobileRangeOptions}
                       radius={1000}
                       stroke={false}
                       eventHandlers={{
@@ -50,4 +48,4 @@ const MobileUser = () => {
     )
 }
 
-export default MobileUser
+export default Crew

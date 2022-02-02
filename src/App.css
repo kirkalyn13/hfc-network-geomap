@@ -37,13 +37,14 @@ label{
   margin: 5px;
   font-weight: bold;;
 }
-input{
+input, .select{
   background-color: hsl(0, 0%, 0%);
   border: 2px solid #00796B; 
   color:#FFF;
   border-radius: 5px;
+  margin: 10px 5rem;
 }
-input:hover, input:active{
+input:hover, input:active, select:hover, select:active{
   border: 2px solid #FFA000;
 }
 .container-head{
@@ -101,10 +102,20 @@ input:hover, input:active{
   /*width: 100%;
   display: flex;*/
 }
+.container-select-map{
+  display: flex;
+  z-index: 1000;
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  color:#000;
+  font-weight: bold;
+  justify-content: flex-start;
+}
 a:link, a:visited {
   background-color: #00796B;
   color: #FFFFFF;
-  padding: 10px 20px;
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -114,11 +125,6 @@ a:link, a:visited {
   font-weight: bold;
 }
 
-a:hover, a:active {
-  background-color: #FFA000;
-  color: #000000;
-  
-}
 .radio-btn{
   color: #F44336;
 }
@@ -172,9 +178,13 @@ a:hover, a:active {
   margin-left: 20px;
   margin-right: 20px;
 }
-.info{
-  display: flex;
-  justify-content: space-between;
+.select-map{
+  background-color: hsl(0, 0%, 0%);
+  border: 2px solid #00796B; 
+  font-size: 25px;
+  color:#FFF;
+  border-radius: 5px;
+  margin: 10px 5rem;
 }
 .site-list{
   height: 75%;
@@ -213,6 +223,9 @@ a:hover, a:active {
     flex-direction: column;
     justify-content: center;
   }
+  input{
+    margin: 10px 1.5rem;
+  }
   .container-head{
     justify-content: center;
   }
@@ -236,5 +249,8 @@ a:hover, a:active {
   .btn-register{
     font-size:smaller;
     align-items: center;
+  }
+  .select-map{ 
+    font-size: 15px;
   }
 }
